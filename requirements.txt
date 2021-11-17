@@ -1,0 +1,4 @@
+spotipy==2.19.0
+python-dotenv==0.19.2
+flask==2.0.2
+uwsgi==2.0.20
