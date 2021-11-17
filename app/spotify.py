@@ -21,7 +21,6 @@ def prevent_ampersand(text):
 
 
 def get_current_song():
-    prevent_ampersand('Safe & &  Sound')
 
     load_dotenv()
 
