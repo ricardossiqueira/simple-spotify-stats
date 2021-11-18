@@ -18,4 +18,4 @@ COPY ./.cache-* /app
 RUN pip install -r /app/requirements.txt
 RUN apk del .build-dependencies && rm -rf /var/cache/apk/*EXPOSE 5000
 
-CMD uwsgi --htpp :${PORT} --ini /app/wsgi.ini
+CMD uwsgi --http :${PORT} --ini /app/wsgi.ini
