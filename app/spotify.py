@@ -5,12 +5,6 @@ from base64 import b64encode
 import requests
 
 
-def trim_text(text, max_len=27):
-    if len(text) > max_len:
-        return text[:max_len] + '...'
-    return text
-
-
 def load_image_b64(uri):
     res = requests.get(uri)
     return b64encode(res.content).decode('ascii')
@@ -49,9 +43,9 @@ def get_current_song():
     spotify_logo = load_image_b64(
         'https://cdn.icon-icons.com/icons2/836/PNG/512/Spotify_icon-icons.com_66783.png')
 
-    return {'song_name': trim_text(song_name),
-            'album_name': trim_text(album_name, 42),
-            'artists': trim_text(artists),
+    return {'song_name': song_name,
+            'album_name': album_name,
+            'artists': artists,
             'album_cover': album_cover,
             'href': href,
             'spotify_logo': spotify_logo}
