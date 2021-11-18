@@ -72,36 +72,10 @@
           width="32" height="32"/>
       </a>
     </div>
-    <div class="song-name" id='h-scroll-song-name'>{{song_name}}</div>
-    <div class="artists" id='h-scroll-artists'>{{artists}}</div>
-    <div class="album" id='h-scroll-album'>{{album_name}}</div>
+    <div class="song-name">{{song_name}}</div>
+    <div class="artists">{{artists}}</div>
+    <div class="album">{{album_name}}</div>
   </div>
-
-  <script>
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    async function hScroll(elementId, maxLen, ms) {
-      const element = document.getElementById(elementId);
-      let text = element.textContent;
-      let i = 0;
-      if (text.length > maxLen) {
-        while (true) {
-          await sleep(ms);
-          element.textContent = text.slice(i, maxLen + i);
-          i++;
-          if (i == text.length) {
-            i = 0;
-          }
-        }
-      } 
-    }
-
-    hScroll('h-scroll-song-name', 27, 300);
-    hScroll('h-scroll-artists', 45, 300);
-    hScroll('h-scroll-album', 45, 300);
-  </script>
 
   </foreignObject>
 </svg>
