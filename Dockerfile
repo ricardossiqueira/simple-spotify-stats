@@ -12,7 +12,7 @@ RUN apk add --no-cache pcre
 WORKDIR /app
 COPY /app /app
 COPY ./requirements.txt /app
-COPY ./.env /app
+# COPY ./.env /app
 COPY ./.cache-* /app
 
 RUN pip install -r /app/requirements.txt
