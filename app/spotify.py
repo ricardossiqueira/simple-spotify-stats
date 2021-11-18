@@ -5,7 +5,7 @@ from base64 import b64encode
 import requests
 
 
-def trim_text(text, max_len=27):
+def trim_text(text, max_len=26):
     if len(text) > max_len:
         return text[:max_len] + '...'
     return text
@@ -51,7 +51,7 @@ def get_current_song():
 
     return {'song_name': trim_text(song_name),
             'album_name': trim_text(album_name, 42),
-            'artists': trim_text(artists),
+            'artists': trim_text(artists, 42),
             'album_cover': album_cover,
             'href': href,
             'spotify_logo': spotify_logo}
