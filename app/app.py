@@ -1,12 +1,8 @@
-import os
-from dotenv import load_dotenv
 from flask import Flask, render_template, Response
 from spotify import get_current_song
 
 
 app = Flask(__name__)
-
-load_dotenv()
 
 
 @app.route('/')
